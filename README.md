@@ -11,6 +11,8 @@ This code uses the LAC implementation, that can be found at : https://csrc.nist.
                                                  gcc -c attack.c $(cflags)
 3. Add #include "attack.h" to main.c
 
+You can modify the level of security in lac_param.h. Don't use the constant bch implementation.
+
 To launch our attack, you need to use the function recover_s() that:
   1. Generate private and public keys using LAC key generation function
   2. Recover the secret key
