@@ -17,4 +17,4 @@ You can modify the level of security in lac_param.h. Don't use the constant bch 
 You need to use the function recover_s() that:
   1. Generate private and public keys using LAC key generation function
   2. Recover the secret key
-  3. Print the recover secret key and after the original secret key
+  3. Print the recover secret key and the original one
