@@ -9,7 +9,7 @@ To launch our attack:
   * Add to object (at the end of the line): attack.o
   * Add attack.h to main.o
   * Between rng.o and clean, add the line : attack.o: attack.c api.h rand.h ecc.h lac_param.h attack.h
-                                                 gcc -c attack.c $(cflags)
+                                                 <\br> gcc -c attack.c $(cflags)
 3. Add #include "attack.h" to main.c
 
 You can modify the level of security in lac_param.h. Don't use the constant bch implementation.
