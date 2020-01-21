@@ -4,10 +4,10 @@ This code uses the LAC implementation, that can be found at : https://csrc.nist.
 
 1. Add our code in the folder optimized or reference implementation
 
-2. Add to the Makefile:
-  * Add to object the line: attack.o
-  * In the following add the line : attack.o: attack.c api.h rand.h ecc.h lac_param.h
-                                       gcc -c attack.c $(cflags)
+2. Add to the Makefile :
+  * Add to object (at the end of the line): attack.o
+  * Between rng.o and clean, add the line : attack.o: attack.c api.h rand.h ecc.h lac_param.h
+                                                 gcc -c attack.c $(cflags)
                                        
 To launch our attack, you need to use the function recover_s() that:
   1. Generate private and public keys using LAC key generation function
