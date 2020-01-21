@@ -6,11 +6,11 @@ To launch our attack:
 1. Add our code in the folder optimized or reference implementation
 
 2. Add to the Makefile :
-  * Add to object (at the end of the line): attack.o
-  * Add attack.h to main.o
-  * Between rng.o and clean, add the line : attack.o: attack.c api.h rand.h ecc.h lac_param.h attack.h
-<br/>                                                   gcc -c attack.c $(cflags)
-3. Add <pre><code>#include</code></pre> "attack.h" to main.c
+  * Add to object (at the end of the line): <pre><code>attack.o</code></pre>
+  * Add <pre><code>attack.h</code></pre> to main.o
+  * Between rng.o and clean, add the line : <pre><code>attack.o: attack.c api.h rand.h ecc.h lac_param.h attack.h
+<br/>                                                      gcc -c attack.c $(cflags)</code></pre>
+3. Add <pre><code>#include "attack.h"</code></pre>  to main.c
 
 You can modify the level of security in lac_param.h. Don't use the constant bch implementation.
 
