@@ -283,12 +283,11 @@ int recover_s()
     memset(recover,0, 2);
 
     #if defined LAC256
-    for (int i=0; i<DIM_N; i++)
+    for (int i=0; i<DIM_N - C2_VEC_NUM/2; i++)
     {
         recover_bit_s_256(i, sk, recover);
         sk_recover[i] = recover[0];
-        if (i < DIM_N - C2_VEC_NUM/2)
-            sk_recover[i + C2_VEC_NUM/2] = recover[1];
+        sk_recover[i + C2_VEC_NUM/2] = recover[1];
     }
     #else
     for (int i=0; i<DIM_N; i++)
