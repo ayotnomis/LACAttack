@@ -263,7 +263,7 @@ int recover_bit_s_256(unsigned int bit, unsigned char *sk, unsigned char *recove
 int recover_s()
 {
     unsigned char pk[CRYPTO_PUBLICKEYBYTES];
-	unsigned char sk[DIM_N];
+    unsigned char sk[DIM_N];
     unsigned char sk_recover[DIM_N];
     unsigned char recover[2];
     int diff = 0;
@@ -306,17 +306,20 @@ int recover_s()
     }
     printf("diff = %i\n\n", diff);
 
+    printf("-------Alice secret key--------\n");
     for(int i=0; i<DIM_N; i++)
-	{
-		printf("%02x.", sk[i]);
-	}
-	printf ("\n");
-
+    {
+	printf("%02x.", sk[i]);
+    }
+    printf ("\n");
+    printf("------------------------------\n");
+    printf("-----Recovered secret key-----\n");
     for(int i=0; i<DIM_N; i++)
-	{
-		printf("%02x.", sk_recover[i]);
-	}
-    printf ("\n\n\n"); 
+    {
+	printf("%02x.", sk_recover[i]);
+    }
+    printf ("\n"); 
+    printf("------------------------------\n");
     
     return diff;
 }
